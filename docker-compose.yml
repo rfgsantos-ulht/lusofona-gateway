@@ -1,14 +1,14 @@
 version: '3'
 services:
   nginx:
-    image: projects-nginx:latest
+    image: lusofona-gateway:latest
     build: ./
     container_name: gateway
     volumes:
-      - /Users/santorui/Desktop/Lusofona/projects-server/nginx-proxy/locations:/etc/nginx/locations
-      - /Users/santorui/Desktop/Lusofona/projects-server/nginx-proxy/multimedia:/etc/nginx/multimedia
+      - /home/deisi/lusofona-gateway/locations:/etc/nginx/locations
+      - /home/deisi/lusofona-gateway/multimedia:/etc/nginx/multimedia
+      - /home/deisi/certs/:/home/certs/
     ports:
-      - "80:80"
       - "443:443"
     networks:
       - gateway-network
