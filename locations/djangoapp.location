@@ -1,0 +1,11 @@
+location /djangoapp {
+    proxy_pass http://mywebsite:8000;
+}
+
+location /djangoapp/static {
+    root /etc/nginx/multimedia;
+}
+
+location /djangoapp/media {
+    root /etc/nginx/multimedia;
+}
